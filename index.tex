@@ -1,0 +1,736 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  12pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[]{libertinus}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=0.8in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{datetime}
+\newdateformat{mydate}{\monthname[\THEMONTH], \THEYEAR}
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+\lhead{\mydate{\today}}
+\rhead{Reuse: \href{https://creativecommons.org/licenses/by-nc-sa/3.0/}{CC BY-NC-SA 3.0}}
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Reference Solutions for MA119 Final Review},
+  pdfauthor={Dr.~Ye},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Reference Solutions for MA119 Final Review}
+\author{Dr.~Ye}
+\date{December, 2022}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Those references solutions are for MA119 final review of QCC. A html
+version can be found at
+\url{https://fyemath.github.io/RefSolMA119/index.html}. Please let me
+know if you see any mistakes. Thank you!
+\end{abstract}
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, sharp corners, interior hidden, boxrule=0pt, frame hidden, enhanced, breakable]}{\end{tcolorbox}}\fi
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Applying negative exponent, product, quotient-to-power,
+  product-to-power, and power-to-power rules implies \[
+   \begin{aligned}
+   \left(\frac{6x^5y^{-2}z}{2x^{-3}y^4z^{-11}}\right)^{-3}=&\left(\frac{3x^5x^3zz^{11}}{y^4y^2}\right)^{-3}\\
+   =&\left(\frac{3x^8z^{12}}{y^6}\right)^{-3}\\
+   =&\left(\frac{y^6}{3x^8z^{12}}\right)^3\\
+   =&\frac{(y^6)^3}{3^3(x^8)^3(z^{12})^3}\\
+   =&\frac{y^{18}}{27x^{24}z^{36}}\\
+   \end{aligned}
+   \]
+\item
+  Solving for \(y\) yields \(y=\frac12x-\frac74\). So the slope of the
+  given line is \(m=\frac12\). Then the slope of the perpendicular line
+  is \(m_\perp=-\frac1m=-2\). Since the perpendicular line passes
+  through \((2,-5)\), it is determined by the equation \[y=-2(x-2)-5.\]
+  Simplifying the right hand side yields the slope-intersect form
+  \[y=-2x-1.\]
+\item
+  The slope of the given line is
+  \[m=\frac{4-6}{-2-2}=\frac{-2}{-4}=\frac12.\] The point-slope form
+  equation of the line is \[y=\frac12(x-2)+6.\]
+
+  Simplifying the right hand side gives the slope-intercept form
+  equation \[y=\frac12x+5.\]
+\item
+  The first step to solve an absolut value equation is to isolate the
+  absolute value expression. Then using the definition of absolute value
+  to remove the absolute value sign and solving the resulting equation.
+  It's better to check the answers. In this case, \[
+   \begin{aligned}
+   |3x+2|+1=&6\\
+   |3x+2|=&5\\
+   3x+2=5\quad\text{or}&\quad 3x+2=-5\\
+   3x=3\quad\text{or}&\quad 3x=-7\\
+   x=1\quad\text{or}&\quad x=-\frac73.
+   \end{aligned}
+   \]
+
+  \textbf{Check:} when \(x=1\), the left hand side is
+  \(|3\cdot 1 + 2|+1=|5|+1=5+1=6\) which equals the right hand side. So
+  \(x=1\) is a solution. When \(x=-\frac73\), the left hand side is
+  \(|3\cdot(-\frac73)+3|+1=|-5|+1=5+1=6\) which equals the right hand
+  side. So \(x=-\frac73\) is also a solution.
+\item
+  When using grouping method to factor polynomial with four terms, you
+  can expect the second group has the same binomial factor.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+  \end{enumerate}
+
+  \[
+   \begin{aligned}
+   12xy-10y-18x+15=&(12xy-10y)+(-18x+15)\\
+   =&2y(6x-5)+(6x-5)(-3)\\
+   =&(6x-5)(2y-3).
+   \end{aligned}
+   \]
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \setcounter{enumii}{1}
+  \tightlist
+  \item
+  \end{enumerate}
+
+  \[
+   \begin{aligned}
+   x^3+5x^2-16x-80=&(x^3+5x^2)+(-16x-80)\\
+   =&x^2(x+5)+(x+5)(-16)\\
+   =&(x+5)(x^2-16)\\
+   =&(x+5)(x^2-4^2)\\
+   =&(x+5)(x-4)(x+4).
+   \end{aligned}
+   \]
+\item
+  The graph has two \(x\)-intercepts \((-1, 0)\) and \((3,0)\) and one
+  \(y\)-intercept \((0, 3)\). The graph between the two \(x\)-intercepts
+  is above the \(x\)-axis, equivalently, \(y>0\). So the \(y\)-value is
+  positive if \(x\) is in \((-1,3)\). The domain of the graph is
+  \((-\infty, \infty)\) because any vertical line will intersect the
+  graph. The range of the graph is \((-\infty, 4]\) because it has a
+  highest positioned point \((1, 4)\) but no lowest positioned point.
+  The value \(f(1)=4\) as \((1, 4)\) is the point on the graph. Since
+  \(f(0)=3\) and \(f(2)=3\), the equation \(f(x)=3\) has two solutions
+  \(x=0\) and \(x=2\).
+\item
+  Solving a linear inequality is very similar to solving a linear
+  equation. But for a linear inequality, when multiplying or dividing a
+  negative number, the inequality sign should be switched. \[
+   \begin{aligned}
+   4x-5\leq& 3(x+2)\\
+   4x-5\leq& 3x+6\\
+   x\leq&11.
+   \end{aligned}
+   \] As \(x\leq 11\), \(x\) is on the left hand side of 11. That is 11
+  is the right bound of the interval. There is no left bound so the
+  interval for \(x\le 11\) is \((-\infty, 11]\).
+\item
+  When factoring a binomial involving cubes, you may need the
+  sum/difference of cubes formula
+  \(A^3\pm B^3=(A\pm B)(A^2\mp AB+B^2)\).
+  \[x^3y-8y=y(x^3-8)=y(x-2)(x^2+2x+4).\]
+\item
+  One way to solve a rational equation is to first clearing the
+  denominator by multiplying the LCD. However, when using this method,
+  after solving the resulting equation, the solutions must be checked
+  for possible extraneous solutions. In this case, the LCD is
+  \((x-5)(x+1)=x^2-4x-5\). \[
+   \begin{aligned}
+   \frac{3x}{x-5}-\frac{2x}{x+1}=&-\frac{42}{x^2-4x-5}\\
+   (x-5)(x+1)\cdot\frac{3x}{x-5}-(x-5)(x+1)\cdot\frac{2x}{x+1}=&(x-5)(x+1)\cdot\left(-\frac{42}{x^2-4x-5}\right)\\
+   3x(x+1)-2x(x-5)=&-42\\
+   3x^2+3x-2x^2+10x=&-42\\
+   x^2+13x+42=&0\\
+   (x+6)(x+7)=&0\\
+   x+6=0\quad\text{or}&\quad x+7=0\\
+   x=-6\quad\text{or}&\quad x=-7.
+   \end{aligned}
+   \] Since the LCD is nonzero for both \(x=-6\) and \(x=-7\), they are
+  not extraneous solutions.
+\item
+  For a square root to be real, the radicand has to be nonnegative.
+  Therefore, the domain of the function \(f(x)=\sqrt{-4-2x}\) is the
+  solution set of the inequality \(-4-2x\ge 0\). Solving this linear
+  inequality implies \(x\le -2\). In interval notation, the domain is
+  \((-\infty, -2]\).
+\item
+  Since \(-27=(-3)^3\), \((-27)^{\frac23}=((-3)^3)^{\frac23}=(-3)^2=9\).
+\item
+  Rational exponents have the same rules of integer exponents. Moreover,
+  \(x^{\frac mn}=\sqrt[n]{x^m}=(\sqrt[n]{x})^m\) given that
+  \(\sqrt[n]x\) is real. Then \[
+  (-8x^6y^2)^{\frac13}=((-2)^3)^{\frac13}(x^6)^{\frac13}(y^2)^{\frac13}=(-2)^1x^2y^{\frac23}=-2x^2\sqrt[3]{y^2}.
+  \]
+\item
+  Solving a radical equation is similar to solving an absolute value
+  equation or an exponential equation. The radical expression should be
+  isolated first. Then the functional transformation, taking power of
+  both sides, and be applied. But be careful, not all functional
+  transformations are equivalent transformations. \[
+  \begin{aligned}
+  \sqrt{x+2}+4=&x\\
+  \sqrt{x+2}=&x-4\\
+  (\sqrt{x+2})^2=&(x-4)^2\\
+  x+2=&x^2-2\cdot 4\cdot x+4^2\\
+  x^2-8x+16=&x+2\\
+  x^2-9x+14=&0\\
+  (x-2)(x-7)=&0\\
+  x-2=0\quad\text{or}&\quad x-7=0\\
+  x=2\quad\text{or}&\quad x=7.
+  \end{aligned}
+  \] \textbf{Check:} when \(x=2\), the left hand side is
+  \(\sqrt{2+2}+4=\sqrt{4}+4=2+4=6\) which does not equal the right hand
+  side. So \(x=2\) is not a solution. When \(x=7\), the left hand side
+  is \(\sqrt{7+2}+4=\sqrt{9}+4=3+4=7\) which equals the right hand side.
+  So \(x=7\) is a solution.
+\item
+  Note that \(\mathbf{i}^2=-1\) and \((A\pm B)^2=A^2\pm 2AB+B^2\). Then
+  \[(3+4\mathbf{i})^2=3^2+2\cdot 3\cdot 4\mathbf{i}+4^2\mathbf{i}^2=9+24\mathbf{i}-16=-7+24\mathbf{i}.\]
+\item
+  Recall \(\sqrt{-b}=\mathbf{i}\sqrt{b}\) if \(b>0\). Then \[
+  \begin{aligned}
+  (x-7)^2=&-16\\
+  x-7=&\pm\sqrt{-16}\\
+  x-7=&\pm\sqrt{16}\cdot\mathbf{i}\\
+  x-7=&\pm4\mathbf{i}\\
+  x=&7\pm4\mathbf{i}.\\
+  \end{aligned}
+  \]
+\item
+  Suppose the width of the frame is \(x\) centimeters, then the
+  dimension of the combined area is \(2x+50\) centimeters by \(2x+30\)
+  centimeters and \(x\) satisfies the equation \[(2x+50)(2x+30)=2204.\]
+  Solving this equation implies \[
+  \begin{aligned}
+  4x^2+160x+1500=&2204\\
+  4x^2+160x-704=&0\\
+  x^2+40x-176=&0\\
+  (x-4)(x-44)=&0\\
+  x-4=0\quad\text{ or}&\quad x+44=0\\
+  x=4\quad\text{ or}&\quad x=-44.
+  \end{aligned}
+  \] Therefore, the width of the frame is \(4\) centimeters.
+\item
+  Suppose the positive number is \(x\). The sum of the number and twice
+  of its square can be expressed as \(x+2x^2\). Then \(x\) satisfies the
+  equation \(x+2x^2=11.88\) which can be re-written as
+  \(2x^2+x-11.88=0\). Solving by the quadratic formula yields
+  \[x=\frac{-1+\sqrt{1^2-4\cdot 2\cdot (-11.88)}}{2\cdot 2}=2.2.\]
+\item
+  In the investment formula \(A=P(1+\frac{r}{n})^{nt}\), \(P\) is the
+  initial investment, \(r\) is the annual interest rate, \(n\) is the
+  number of compounding in a year, \(t\) is the number of years, and
+  \(A\) is the balance after \(t\) years. In this case, \(P=20000\),
+  \(r=5\%=0.05\), \(n=4\) since the interest is compounded quarterly,
+  that is 4 times per year. Then the balance \(A\) after 4 years is
+  \[A=20000\left(1+\frac{0.05}{4}\right)^{4\cdot 4}\approx 24397.79.\]
+\item
+  Recall \(\log_bx\) is the number \(y\) such that \(b^y=x\), that is,
+  \(b^{\log_bx}=x\). To solve the equation, taking both sides as
+  exponents of the base of the log implies \[
+  \begin{aligned}
+  \log_8x=&\frac43\\
+  8^{\log_8x}=&8^{\frac43}\\
+  x=&(2^3)^{\frac43}\\
+  x=&2^4\\
+  x=&16.
+  \end{aligned}
+  \]
+\item
+  By the power rule of log, \(\log_b(M^p)=p\log_bM\). Applying \(\log\)
+  (or \(\ln\)) to a power will bring down the exponent. \[
+  \begin{aligned}
+  3^x=&62\\
+  \log(3^x)=&\log(62)\\
+  x\log(3)=&\log(62)\\
+  x=&\frac{\log(62)}{\log(3)}\\
+  x\approx & 3.757.
+  \end{aligned}
+  \]
+\item
+  To solve a logarithmic equation involving more than one logarithms,
+  the first step is to rewrite them into a single logarithm using rules
+  of logarithms. \[
+  \begin{aligned}
+  \log(16-20x)-\log(-x)=&2\\
+  \log\left(\frac{16-20x}{-x}\right)=&2\qquad \text{quotient rule applied}\\
+  \left(\frac{16-20x}{-x}\right)=&10^2\qquad \text{apply the definition}\\
+  \left(\frac{20x-16}{x}\right)=&100 \qquad \text{simplify}\\
+  20x-16=&100x \qquad \text{clear denominator}\\
+  -80x=&16 \qquad \text{adding } -100x+16 \text{ to both sides}\\
+  x=&\frac{16}{-80} \qquad \text{dividing } -80 \text{ from both sides}\\
+  x=&-\frac{1}{5} \qquad \text{simplify}.
+  \end{aligned}
+  \] \textbf{Note:} Because the domain of a logarithmic function
+  \(y=\log_bx\) is \((0, \infty)\) instead of \((-\infty,\infty)\).
+  There may be extraneous solutions. After solving logarithmic function,
+  you need to check if the solution makes all logarithmic expressions
+  well defined. In this case, when \(x=-\frac15\), \(16-5x=20\) and
+  \(-x=\frac15\). So both logarithmic expression are well defined and
+  \(x=-\frac15\) is not an extraneous solution.
+\item
+  The notation \(f(x)\) represents the output of the function \(f\) for
+  the given input \(x\). When the function is defined by an equation, to
+  evaluate \(f(a)\), simply replace \(x\) by \(a\) and evaluate.
+  \[f(0)=0^2-7\cdot 0 +4=4.\]
+  \[f(-3)=(-3)^2-7\cdot (-3) + 4=9+21+4=34.\]
+  \[f(2t)=(2t)^2-7\cdot (2t) + 4=4t^2-14t+4.\]
+\item
+  The domain of a rational functions consists of all real numbers except
+  those that make the denominator zero. In this case, the solution
+  \(x=\frac54\) of the equation \(5-4x=0\) should be removed. So the
+  domain is \(x\neq\frac54\). In interval notation,
+  \((-\infty, \frac54)\cup(\frac54,\infty)\).
+\item
+  One method to solve a linear system is to eliminate one variable first
+  using multiplication/division and addition/subtraction. For example,
+  to eliminate \(x\), multiplying the first equation by 3 and the second
+  the equation by 4, then taking the sum yields
+  \(3(-2y)+4(-5y)=3\cdot 16+4\cdot 1\). Simplifying and solving for
+  \(y\) implies \[
+  \begin{aligned}
+  3(-2y)+4(-5y)=&3\cdot 16+4\cdot 1\\
+  -26y=&52\\
+  y=&-2.
+  \end{aligned}
+  \]
+
+  To get \(x\), the elimination method can be used again. Or one can
+  plug \(y=-2\) into one of the equations and solve for \(x\).
+
+  Plug \(y=-2\) into the first equation and solve for \(x\). \[
+  \begin{aligned}
+  4x-2(-2)=&16\\
+  4x+4=&16\\
+  4x=&12\\
+  x=&3.
+  \end{aligned}
+  \]
+
+  So the solution of the system is \((3, -2)\).
+\item
+  When solving this type of compounded inequality, make sure to apply
+  changes to all three places separated by the inequality signs. \[
+  \begin{array}{rcccl}
+  -12 &\le& 3x-2 &<&7\\
+  -10 &\le& 3x &<&9\\
+  -\frac{10}{3}&\le& x &<&3.
+  \end{array}
+  \] In interval notation, the solution set is
+  \(\big[-\frac{10}{3}, 3\big)\).
+\item
+  The slope \(m_{\parallel}\) of the parallel line equals the slope
+  \(m\) of the given line. To get the slope of the given line, solve for
+  \(y\). \[
+  \begin{aligned}
+  6x-3y=&12\\
+  -3y=&-6x-12\\
+  y=&2x+4.
+  \end{aligned}
+  \] So \(m_\parallel=m=2\). The point-slope form equation of the
+  parallel line is \[y=2(x-2)-3.\]
+
+  Simplifying the right hand side give the slope-intercept form equation
+  \[y=2x-7.\]
+
+  The \(x\)-intercept has the \(y\)-coordinate \(0\). Let \(y=0\) in the
+  slope-intercept form and solve for \(x\) yields \(x=\frac72\). So the
+  \(x\)-intercept is \(\left(\frac{7}{2},0\right)\).
+\item
+  Since the unknown \(b\) is in the denominator, to solve for \(b\), we
+  may first clearing denominators by multiplying the LCD \(abc\) to both
+  sides and then simplify and solve. \[
+  \begin{aligned}
+  \frac1a=&\frac1b+\frac1c\\
+  abc\cdot\frac1a=&abc\cdot\frac1b+abc\cdot\frac1c\\
+  bc=&ac+ab\\
+  bc-ab=&ac\\
+  b(c-a)=&ac\\
+  b=&\frac{ac}{c-a}\quad\text{if }a\ne c.
+  \end{aligned}
+  \] If \(a=c\), there is no solution for \(b\).
+\item
+  The binomial involves cubes, the formula
+  \[A^3\pm B^3=(A\pm B)(A^2\mp AB+B^2)\] is needed. \[
+  \begin{aligned}
+  &8x^6+27y^3\\
+  =&(2x^2)^3+(3y)^3\\
+  =&(2x^2 + 3y)((2x^2)^2-(2x^2)(3y)+(3y)^2)\\
+  =&(2x^2 + 3y)(4x^4-6x^2y+9y^2).
+  \end{aligned}
+  \]
+\item
+  A complex rational expression is the quotient of a rational expression
+  by another rational expression. One way to simplify it is to simplify
+  both the numerator and denominator first and then convert the quotient
+  into a multiplication. \[
+  \begin{aligned}
+  \frac{\frac1x-\frac1y}{1-\frac{x^2}{y^2}}
+  =&\frac{\frac{y-x}{xy}}{\frac{y^2-x^2}{y^2}}\\
+  =&\frac{y-x}{xy}\cdot\frac{y^2}{y^2-x^2}\\
+  =&\frac{y^2(y-x)}{xy(y-x)(y+x)}\\
+  =&\frac{y}{x(y+x)}.
+  \end{aligned}
+  \]
+\item
+  To evaluate \(f(a)\), substitute \(x\) by \(a\) in the equation.
+  \[f(0)=\sqrt[3]{3\cdot 0-8}=\sqrt[3]{-8}=-2.\]
+  \[f(24)=\sqrt[3]{3\cdot 24-8}=\sqrt[3]{64}=4.\]
+\item
+  If the denominator is a binomial involving only square roots,
+  multiplying both the numerator and the denominator by the conjugate
+  will eliminate the square root signs from the denominator using the
+  difference of squares formula \((A-B)(A+B)=A^2-B^2\). \[
+  \begin{aligned}
+  \frac{6}{3\sqrt{x}-2}=&\frac{6(3\sqrt{x}+2)}{(3\sqrt{x}-2)(3\sqrt{x}+2)}\\
+  =&\frac{18\sqrt{x}+12}{(3\sqrt{x})^2-2^2}\\
+  =&\frac{18\sqrt{x}+12}{9x-4}.
+  \end{aligned}
+  \]
+\item
+  To simplify a radical, the following formula can be used:
+  \(\sqrt[n]{x^m}=x^p\sqrt[n]{x^r}\), where \(p\) is the quotient of
+  \(m\) by \(n\) and \(r\) is the reminder.
+  \[\sqrt{24x^9y^6}=\sqrt{3\cdot 2^3x^9y^6}=2x^4y^3\sqrt{3\cdot 2 x}=2x^4y^3\sqrt{6x}.\]
+\item
+  Before combining like radicals, the radicals should be simplified
+  first. \[
+  \begin{aligned}
+  2\sqrt{9}-5\sqrt3-\sqrt{75}=&2\cdot 3-5\sqrt3-\sqrt{3\cdot 5^2}\\
+  =&6-5\sqrt3-5\sqrt3\\
+  =&6-10\sqrt3.
+  \end{aligned}
+  \]
+\item
+  To get rid of the radical sign from an isolated radical, one can raise
+  both sides to the power that is the index of the radical. \[
+  \begin{aligned}
+  \sqrt[3]{5+3x}=&-4\\
+  (\sqrt[3]{5+3x})^3=&(-4)^3\\
+  5+3x=&-64\\
+  3x=&-69\\
+  x=&-23.
+  \end{aligned}
+  \]
+
+  \textbf{Check:} Plugging \(x=-23\) into the left hand side implies
+  \(\sqrt[3]{5+3\cdot(-23)}=\sqrt[3]{-64}=-4\) which equals the right
+  hand side. So \(x=-23\) is the solution of the equation.
+\item
+  Simplifying a quotient of two complex numbers is similar to
+  rationalize a denominator. \[
+  \begin{aligned}
+  \frac{5\mathbf{i}}{-2+3\mathbf{i}}=&\frac{5\mathbf{i}(-2-3\mathbf{i})}{(-2+3\mathbf{i})(-2-3\mathbf{i})}\\
+  =&\frac{-10\mathbf{i}-15\mathbf{i}^2}{(-2)^2-(3\mathbf{i})^2}\\
+  =&\frac{-10\mathbf{i}+15}{4+9}\\
+  =&\frac{15}{13}-\frac{10}{13}\mathbf{i}.
+  \end{aligned}
+  \]
+\item
+  The \(ax^2+bx+c=0\) can be completed into the perfect square form
+  \(a(x-h)^2+k=0\), where \(h=-\frac{b}{2a}\) and \(k=ah^2+bh+c\). In
+  this case, since \(a=1\) and \(b=-6\), \(h=-\frac{-6}{2\cdot 1}=3\)
+  and \(k=3^2-6\cdot 3+3=-6\). Therefore, \[
+  \begin{aligned}
+  x^2-6x+3=&0\\
+  (x-3)^2-6=&0\\
+  (x-3)^2=&6\\
+  x-3=&\pm\sqrt{6}\\
+  x=&3\pm\sqrt{6}.
+  \end{aligned}
+  \]
+\item
+  Suppose the longer leg is \(x\) feet, the shorter leg is then \(x-4\)
+  feet. By the Pythagorean theorem, that is, in a right triangle,
+  \(\text{leg}^2+\text{leg}^2=\text{hypotenuse}^2\). Then the unknown
+  \(x\) satisfies the following equation: \[x^2+(x-4)^2=7^2.\] To get
+  \(x\), simplify and solve the equation. Recall that
+  \((A\pm B)^2=A^2\pm 2AB+B^2\) and the quadratic formula
+  \(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\) if \(ax^2+bx+c=0\). \[
+  \begin{aligned}
+  x^2+(x-4)^2=&7^2\\
+  x^2+x^2-2\cdot 4x+4^2=&49\\
+  2x^2-8x+16=&49\\
+  2x^2-8x-33=&0\\
+  x=&\frac{-(-8)\pm\sqrt{(-8)^2-4\cdot2\cdot(-33)}}{2\cdot 2}\\
+  x\approx -2.53\quad\text{or}&\quad x\approx 6.53.
+  \end{aligned}
+  \] Therefore, the longer leg is approximately \(6.53\) feet and the
+  shorter leg is approximately \(6.53-4=2.53\) feet.
+\item
+  The \(x\)-intercepts have the \(y\)-coordinate \(0\). To get their
+  \(x\)-coordinates, solve the equation \(-x^2+4x+5=0\). \[
+  \begin{aligned}
+  -x^2+4x+5=&0\\
+  x^2-4x-5=&0\\
+  (x+1)(x-5)=&0\\
+  x+1=0\quad\text{or}&\quad x-5=0\\
+  x=-1\quad\text{or}&\quad x=5.
+  \end{aligned}
+  \] So the \(x\)-intercepts are \((-1, 0)\) and \((5, 0)\).
+
+  The \(y\)-intercept is \((0, f(0))=(0, c)=(0, 5)\).
+
+  The equation of the axis of symmetry is \(x=-\frac{b}{2a}\) Since
+  \(-\frac{b}{2a}=-\frac{4}{2\cdot(-1)}=2\), the axis of symmetry is
+  \(x=2\).
+
+  The vertex is the intersection of the axis of symmetry and the
+  parabola. So the coordinates are
+  \(\left(-\frac{b}{2a}, f\left(-\frac{b}{2a}\right)\right)\). Since
+  \(-\frac{b}{2a}=2\) and \(f(2)=-2^2+4\cdot 2+5=9\), the vertex is
+  \((2, 9)\).
+
+  To sketch the graph, plot the intercepts, the vertex, graph the axis
+  of symmetry and connect the points smoothly so that the graph is
+  symmetric with respect to the axis of symmetry.
+\item
+  Since \(x=5.5\), the value of \(V\) is \[
+  V=35000\cdot (3.21)^{-0.05\cdot 5.5}\approx 25396.81.
+  \]
+\item
+  To solve a logarithmic equation, first combine the logarithmic
+  expressions into a single logarithm using rules of logarithms, then
+  using the definition of logarithm to rewrite into an equivalent
+  equation without logarithms. \[
+  \begin{aligned}
+  \log_4x+\log_4(x-6)=&2\\
+  \log_4[x(x-6)]=&2\\
+  x(x-6)=&4^2\\
+  x^2-6x=&16\\
+  x^2-6x-16=&0\\
+  (x+2)(x-8)=&0\\
+  x+2=0\quad\text{or}&\quad x-8=0\\
+  x=-2\quad\text{or}&\quad x=8.
+  \end{aligned}
+  \] Since \(\log_4(-2)\) is undefined, only \(x=8\) is a solution.
+\item
+  The statement that the balance is doubled means \(A=2P\). The years
+  \(t\) it takes to double the investment is then satisfies the equation
+  \(2P=P\left(1+\frac{r}{n}\right)^{nt}\). Dividing \(P\) from both
+  sides yields \(2=\left(1+\frac{r}{n}\right)^{nt}\). Since
+  \(r=4.5\%=0.045\), \(n=2\), the equation becomes \[
+  \begin{aligned}
+  2=&\left(1+\frac{0.045}{2}\right)^{2t}\\
+  \log 2=&\log\left(1+\frac{0.045}{2}\right)\cdot (2t)\\
+  t=&\frac{\log 2}{2\log\left(1+\frac{0.045}{2}\right)}\\
+  t\approx&15.58.
+  \end{aligned}
+  \] So it takes approximately 15.58 years to double the balance if the
+  interest rate is 4.5\% and compounded semiannually.
+\item
+  When adding/subtracting rational expressions, the rational expressions
+  should be rewritten into equivalent expressions with the LCD as the
+  denominators. \[
+  \begin{aligned}
+  &\frac{4x-4}{x^2+2x-15}-\frac{3}{x+5}\\
+  =&\frac{4x-4}{(x-3)(x+5)}-\frac{3(x-3)}{(x-3)(x+5)}\\
+  =&\frac{(4x-4)-3(x-3)}{(x-3)(x+5)}\\
+  =&\frac{4x-4-3x+9}{(x-3)(x+5)}\\
+  =&\frac{x+5}{(x-3)(x+5)}\\
+  =&\frac{1}{x-3}.
+  \end{aligned}
+  \]
+\item
+  The division of rational expression can be rewritten as a product. \[
+  \begin{aligned}
+  &\frac{x^2-x-12}{2x+8}\div\frac{2x^2+5x-3}{8x-4}\\
+  =&\frac{x^2-x-12}{2x+8}\cdot\frac{8x-4}{2x^2+5x-3}\\
+  =&\frac{(x+3)(x-4)}{2(x+4)}\cdot\frac{4(2x-1)}{(2x-1)(x+3)}\\
+  =&\frac{2(x-4)}{x+4}.
+  \end{aligned}
+  \]
+\item
+  In the equation that defines the function, we know that \(R=60000\).
+  Then \(x\) satisfies the equation \(60000=x(1000-4x)\). Solving the
+  equation yields \[
+  \begin{aligned}
+  60000=&1000x-4x^2\\
+  4x^2-1000x+60000=&0\\
+  (4x-600)(x-100)=&0\\
+  4x-600=0\quad\text{or}&\quad x-100=0\\
+  x=150\quad\text{or}&\quad x=100.
+  \end{aligned}
+  \] Therefore, when 100 or 150 products were sold, the revenue is
+  60000.
+\item
+  When the value is \(20000\), the age \(x\) satisfies the equation
+  \(20000=40000(1.23)^{-0.4x}\). Solving the equation yields \[
+  \begin{aligned}
+  20000=&40000(1.23)^{-0.4x}\\
+  0.5=&(1.23)^{-0.4x}\\
+  \log(0.5)=&\log((1.23)^{-0.4x})\\
+  \log(0.5)=&\log(1.23)\cdot(-0.4x)\\
+  x=&\frac{\log(0.5)}{-0.4\cdot\log(1.23)}\\
+  x\approx&8.37.
+  \end{aligned}
+  \] When the car is 8.37 years old, the value of the car becomes 20000.
+\item
+  In terms of the variables of the function, that a person weighs 80
+  kilogram means \(x=80\). Then the calories the person needed is
+  \[f(80)=70\cdot(80)^{3/4}\approx 1872.47.\]
+
+  To mark the point, \((80, f(80))\), draw a vertical line through
+  \(80\), the intersection of the vertical line with the graph is the
+  point on the graph.
+
+  Suppose the person needed 1500 calories weighs \(x\) kilogram, then
+  \(f(x)=1500\), that is \(70\cdot x^{3/4}=1500\). Solving the equation
+  yields \[
+  \begin{aligned}
+  70\cdot x^{3/4}=&1500\\
+  x^{3/4}=&\frac{150}{7}\\
+  (x^{3/4})^4=&(\frac{150}{7})^4\\
+  x^3=&(\frac{150}{7})^4\\
+  x=&\sqrt[3]{(\frac{150}{7})^4}\\
+  x=&(\frac{150}{7})^{4/3}\\
+  x\approx & 59.52\\
+  \end{aligned}
+  \] A person weighs 59.52 kilogram needs approximately 1500 calories
+  per day.
+\end{enumerate}
+
+
+
+\end{document}
