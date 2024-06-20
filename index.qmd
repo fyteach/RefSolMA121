@@ -21,7 +21,6 @@ format:
     classoption: [12pt]
     geometry:
       - margin=0.8in
-    fontfamily: libertinus
     colorlinks: true
     header-includes:
       - \usepackage{datetime}
